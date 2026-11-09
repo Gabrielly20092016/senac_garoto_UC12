@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cursos | Senac + Chocolates Garoto</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="cursos.css">
+</head>
+
+<body>
+
+    <a href="index.html" class="cs-voltar">
+    <img src="../senac_garoto_UC12/img/seta.png" alt="Voltar para o início">
+</a>
+
+    <!-- Ícones utilizados na página -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-busca" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+        </symbol>
+
+        <symbol id="i-user" viewBox="0 0 24 24">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+        </symbol>
+
+        <symbol id="i-tec" viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+        </symbol>
+
+        <symbol id="i-aut" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12.2 2h-.4a2 2 0 0 0-2 2v.2a2 2 0 0 1-1 1.7l-.4.3a2 2 0 0 1-2 0l-.2-.1a2 2 0 0 0-2.7.7l-.2.4a2 2 0 0 0 .7 2.7l.2.1a2 2 0 0 1 1 1.7v.5a2 2 0 0 1-1 1.7l-.2.1a2 2 0 0 0-.7 2.7l.2.4a2 2 0 0 0 2.7.7l.2-.1a2 2 0 0 1 2 0l.4.3a2 2 0 0 1 1 1.7v.2a2 2 0 0 0 2 2h.4a2 2 0 0 0 2-2v-.2a2 2 0 0 1 1-1.7l.4-.3a2 2 0 0 1 2 0l.2.1a2 2 0 0 0 2.7-.7l.2-.4a2 2 0 0 0-.7-2.7l-.2-.1a2 2 0 0 1-1-1.7v-.5a2 2 0 0 1 1-1.7l.2-.1a2 2 0 0 0 .7-2.7l-.2-.4a2 2 0 0 0-2.7-.7l-.2.1a2 2 0 0 1-2 0l-.4-.3a2 2 0 0 1-1-1.7V4a2 2 0 0 0-2-2z"/>
+        </symbol>
+
+        <symbol id="i-seg" viewBox="0 0 24 24">
+            <path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.5 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/>
+        </symbol>
+
+        <symbol id="i-relogio" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+        </symbol>
+
+        <symbol id="i-nivel" viewBox="0 0 24 24">
+            <path d="M4 20v-4M9 20v-8M14 20V8M19 20V4"/>
+        </symbol>
+    </svg>
+
+    <div class="cs-page">
+
+        <!-- Cabeçalho e navegação -->
+        <header class="cs-topo">
+
+            <a href="#" class="cs-logo">
+                <img src="img/logo-senac-garoto.png" alt="Senac e Chocolates Garoto">
+            </a>
+
+            <input
+                type="checkbox"
+                id="cs-menu-toggle"
+                class="cs-menu-toggle"
+                aria-label="Abrir menu"
+            >
+
+            <label for="cs-menu-toggle" class="cs-hamburguer" aria-hidden="true">
+                <span></span>
+            </label>
+
+            <nav class="cs-nav" aria-label="Menu principal">
+                <a href="index.html">Início</a>
+                <a href="#" aria-current="page">Cursos</a>
+                <a href="#">Certificados</a>
+                <a href="#">Dúvidas</a>
+                <a href="#">Contato</a>
+            </nav>
+
+            <a href="#" class="cs-conta">
+                <svg class="cs-ico">
+                    <use href="#i-user"/>
+                </svg>
+                Acessar conta
+            </a>
+
+        </header>
+
+        <!-- Conteúdo da página -->
+        <main class="cs-principal">
+
+            <span class="cs-selo">Conheça nossas capacitações</span>
+
+            <h1>Cursos disponíveis</h1>
+
+            <p class="cs-sub">
+                Encontre cursos para aprender coisas novas, desenvolver suas
+                habilidades e se preparar para o mercado de trabalho.
+            </p>
+
+            <!-- Campo para pesquisar cursos -->
+            <div class="cs-busca">
+                <input
+                    type="search"
+                    id="cs-busca"
+                    placeholder="O que você deseja aprender?"
+                    aria-label="Pesquisar cursos"
+                >
+
+                <svg class="cs-ico">
+                    <use href="#i-busca"/>
+                </svg>
+            </div>
+
+            <!-- Categorias dos cursos -->
+            <div class="cs-filtros" role="group" aria-label="Categorias">
+
+                <button class="cs-filtro ativo" data-cat="todos">Todos</button>
+
+                <button class="cs-filtro" data-cat="tecnologia">
+                    Tecnologia
+                </button>
+
+                <button class="cs-filtro" data-cat="automacao">
+                    Automação
+                </button>
+
+                <button class="cs-filtro" data-cat="seguranca">
+                    Segurança
+                </button>
+
+                <button class="cs-filtro" data-cat="industria">
+                    Indústria 4.0
+                </button>
+
+            </div>
+
+            <!-- Lista de cursos -->
+            <section class="cs-grade" aria-label="Cursos disponíveis">
+
+                <!-- Curso 1 -->
+                <article class="cs-card" data-cat="tecnologia">
+
+                    <div class="cs-foto">
+                        <img
+                            src="img/curso-tecnologia.jpg"
+                            alt="Profissional trabalhando com equipamentos industriais"
+                        >
+                    </div>
+
+                    <span class="cs-tag">
+                        <svg class="cs-ico">
+                            <use href="#i-tec"/>
+                        </svg>
+                        Tecnologia
+                    </span>
+
+                    <div class="cs-corpo">
+
+                        <h2>Introdução à Tecnologia e Sistemas Industriais</h2>
+
+                        <p class="cs-info">
+                            <svg class="cs-ico">
+                                <use href="#i-relogio"/>
+                            </svg>
+                            Carga horária: 20 horas
+                        </p>
+
+                        <p class="cs-info">
+                            <svg class="cs-ico">
+                                <use href="#i-nivel"/>
+                            </svg>
+                            Nível: Básico
+                        </p>
+
+                        <a href="#" class="cs-btn">Conhecer curso</a>
+
+                    </div>
+                </article>
+
+                <!-- Curso 2 -->
+                <article class="cs-card" data-cat="automacao">
+
+                    <div class="cs-foto">
+                        <img
+                            src="img/curso-automacao.jpg"
+                            alt="Profissional utilizando tablet ao lado de equipamento automatizado"
+                        >
+                    </div>
+
+                    <span class="cs-tag">
+                        <svg class="cs-ico">
+                            <use href="#i-aut"/>
+                        </svg>
+                        Automação
+                    </span>
+
+                    <div class="cs-corpo">
+
+                        <h2>Automação na Prática</h2>
+
+                        <p class="cs-info">
+                            <svg class="cs-ico">
+                                <use href="#i-relogio"/>
+                            </svg>
+                            Carga horária: 32 horas
+                        </p>
+
+                        <p class="cs-info">
+                            <svg class="cs-ico">
+                                <use href="#i-nivel"/>
+                            </svg>
+                            Nível: Básico
+                        </p>
+
+                        <a href="#" class="cs-btn">Conhecer curso</a>
+
+                    </div>
+                </article>
+
+                <!-- Curso 3 -->
+                <article class="cs-card" data-cat="seguranca">
+
+                    <div class="cs-foto">
+                        <img
+                            src="img/curso-seguranca.jpg"
+                            alt="Profissionais utilizando equipamentos de proteção em ambiente industrial"
+                        >
+                    </div>
+
+                    <span class="cs-tag">
+                        <svg class="cs-ico">
+                            <use href="#i-seg"/>
+                        </svg>
+                        Segurança
+                    </span>
+
+                    <div class="cs-corpo">
+
+                        <h2>Segurança na Prática</h2>
+
+                        <p class="cs-info">
+                            <svg class="cs-ico">
+                                <use href="#i-relogio"/>
+                            </svg>
+                            Carga horária: 32 horas
+                        </p>
+
+                        <p class="cs-info">
+                            <svg class="cs-ico">
+                                <use href="#i-nivel"/>
+                            </svg>
+                            Nível: Básico
+                        </p>
+
+                        <a href="#" class="cs-btn">Conhecer curso</a>
+
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Mensagem quando não houver resultados -->
+            <p class="cs-vazio" hidden>
+                Não encontramos nenhum curso com esse nome.
+                Experimente pesquisar de outra forma.
+            </p>
+
+        </main>
+    </div>
+
+    <!-- Busca e filtros -->
+    <script>
+        const botoes = document.querySelectorAll(".cs-filtro");
+        const cursos = document.querySelectorAll(".cs-card");
+        const busca = document.getElementById("cs-busca");
+        const mensagem = document.querySelector(".cs-vazio");
+
+        let categoriaSelecionada = "todos";
+
+        function filtrarCursos() {
+            const pesquisa = busca.value.trim().toLowerCase();
+            let encontrados = 0;
+
+            cursos.forEach(curso => {
+                const categoriaCorreta =
+                    categoriaSelecionada === "todos" ||
+                    curso.dataset.cat === categoriaSelecionada;
+
+                const nomeCorreto =
+                    curso.textContent.toLowerCase().includes(pesquisa);
+
+                const mostrar = categoriaCorreta && nomeCorreto;
+
+                curso.hidden = !mostrar;
+
+                if (mostrar) {
+                    encontrados++;
+                }
+            });
+
+            mensagem.hidden = encontrados > 0;
+        }
+
+        // Seleciona a categoria escolhida
+        botoes.forEach(botao => {
+            botao.addEventListener("click", () => {
+
+                botoes.forEach(item => {
+                    item.classList.remove("ativo");
+                });
+
+                botao.classList.add("ativo");
+
+                categoriaSelecionada = botao.dataset.cat;
+
+                filtrarCursos();
+            });
+        });
+
+        // Pesquisa enquanto o usuário digita
+        busca.addEventListener("input", filtrarCursos);
+    </script>
+
+</body>
+</html>

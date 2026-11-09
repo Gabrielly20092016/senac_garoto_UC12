@@ -1,0 +1,479 @@
+
+/* Estilos da página de cursos Senac + Garoto */
+/* O prefixo "cs-" evita conflitos com outras páginas do site */
+
+/* Seta para voltar ao início */
+.cs-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.cs-voltar img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    cursor: pointer;
+}
+.cs-page {
+  --roxo: #6a1fe0;
+  --roxo-escuro: #4a1d96;
+  --titulo: #5b1a8f;
+  --amarelo: #f5d90f;
+  --texto: #3b3f63;
+  --borda: #cfc4e6;
+
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #fff;
+  color: var(--texto);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+/* Ajustes gerais */
+.cs-page *,
+.cs-page *::before,
+.cs-page *::after {
+  box-sizing: border-box;
+}
+
+.cs-page h1,
+.cs-page h2,
+.cs-page p {
+  margin: 0;
+}
+
+.cs-page a {
+  text-decoration: none;
+}
+
+.cs-page img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Ícones */
+.cs-ico {
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Detalhe amarelo no canto da página */
+.cs-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(160px, 24vw, 340px);
+  height: clamp(130px, 17vw, 240px);
+  background: var(--amarelo);
+  border-radius: 0 0 0 100% / 0 0 0 85%;
+  z-index: 0;
+}
+
+/* Cabeçalho e navegação */
+.cs-topo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem clamp(1rem, 4vw, 3rem);
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.cs-logo img {
+  width: auto;
+  height: 48px;
+}
+
+.cs-nav {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-right: auto;
+}
+
+.cs-nav a {
+  padding: .25rem 0;
+  color: var(--titulo);
+  font-size: 1.05rem;
+  border-bottom: 2px solid transparent;
+}
+
+.cs-nav a:hover,
+.cs-nav a[aria-current="page"] {
+  border-bottom-color: var(--roxo);
+}
+
+/* Botão de acesso à conta */
+.cs-conta {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .8rem 1.6rem;
+  background: var(--roxo);
+  color: #fff;
+  font-size: 1.05rem;
+  border-radius: 999px;
+}
+
+.cs-conta .cs-ico {
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.cs-conta:hover {
+  background: var(--roxo-escuro);
+}
+
+/* Menu do celular */
+.cs-menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cs-hamburguer {
+  display: none;
+}
+
+/* Conteúdo principal */
+.cs-principal {
+  position: relative;
+  z-index: 1;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 1.25rem clamp(1rem, 4vw, 3rem) 4rem;
+}
+
+/* Título e apresentação */
+.cs-selo {
+  display: inline-block;
+  padding: .5rem 1.5rem;
+  background: var(--roxo);
+  color: #fff;
+  border-radius: 999px;
+}
+
+.cs-principal h1 {
+  margin-top: .75rem;
+  color: var(--titulo);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.cs-sub {
+  max-width: 48ch;
+  margin-top: .25rem;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+}
+
+/* Campo de pesquisa */
+.cs-busca {
+  position: relative;
+  width: min(100%, 31rem);
+  margin-top: 1.5rem;
+}
+
+.cs-busca input {
+  width: 100%;
+  padding: .95rem 3.2rem .95rem 1.1rem;
+  background: #fff;
+  color: var(--titulo);
+  border: 1px solid #bbb;
+  border-radius: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .18);
+  font: inherit;
+}
+
+.cs-busca input::placeholder {
+  color: var(--titulo);
+  opacity: .85;
+}
+
+/* Ícone da pesquisa */
+.cs-busca .cs-ico {
+  position: absolute;
+  top: 50%;
+  right: 1.1rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--roxo);
+  transform: translateY(-50%);
+}
+
+/* Destaque ao selecionar os campos */
+.cs-busca input:focus-visible,
+.cs-filtro:focus-visible,
+.cs-btn:focus-visible,
+.cs-conta:focus-visible,
+.cs-nav a:focus-visible {
+  outline: 3px solid var(--roxo);
+  outline-offset: 3px;
+}
+
+/* Botões de filtro dos cursos */
+.cs-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.75rem;
+}
+
+.cs-filtro {
+  padding: .5rem 1.25rem;
+  background: #fff;
+  color: var(--roxo);
+  border: 1px solid #555;
+  border-radius: 999px;
+  font: 600 1rem "Montserrat", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.cs-filtro:hover {
+  background: #f1e9ff;
+}
+
+/* Filtro selecionado */
+.cs-filtro.ativo {
+  background: var(--roxo);
+  color: #fff;
+  border-color: var(--roxo);
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 400;
+}
+
+/* Organização dos cards */
+.cs-grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+/* Aparência de cada curso */
+.cs-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fbfaff;
+  border-radius: .9rem;
+  box-shadow: 0 2px 10px rgba(60, 30, 120, .14);
+}
+
+/* Esconde os cursos que não correspondem à pesquisa */
+.cs-card[hidden] {
+  display: none;
+}
+
+/* Imagem do curso */
+.cs-foto {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo));
+}
+
+.cs-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Etiqueta com o nível do curso */
+.cs-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem 1rem;
+  background: var(--roxo-escuro);
+  color: #fff;
+  font-size: .9rem;
+  border-radius: 999px;
+}
+
+/* Informações do curso */
+.cs-corpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 1.25rem;
+}
+
+.cs-corpo h2 {
+  margin-bottom: .35rem;
+  color: var(--roxo);
+  font: 700 1.1rem/1.3 "Montserrat", system-ui, sans-serif;
+}
+
+/* Carga horária e outras informações */
+.cs-info {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .8rem;
+}
+
+.cs-info .cs-ico {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--roxo);
+}
+
+/* Botão para conhecer o curso */
+.cs-btn {
+  margin-top: auto;
+  padding: .7rem 1rem;
+  background: var(--roxo);
+  color: #fff;
+  font-size: .85rem;
+  text-align: center;
+  border-radius: 999px;
+}
+
+.cs-info + .cs-btn {
+  margin-top: 1rem;
+}
+
+.cs-btn:hover {
+  background: var(--roxo-escuro);
+}
+
+/* Mensagem quando nenhum curso é encontrado */
+.cs-vazio {
+  margin-top: 2rem;
+  color: var(--titulo);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 1000px) {
+  .cs-grade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Menu de navegação para tablets e celulares */
+@media (max-width: 820px) {
+  .cs-topo {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .cs-logo {
+    margin-right: auto;
+  }
+
+  .cs-conta {
+    order: 2;
+    padding: .6rem 1.1rem;
+    font-size: .95rem;
+  }
+
+  /* Ícone de três linhas do menu */
+  .cs-hamburguer {
+    position: relative;
+    display: block;
+    order: 3;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--borda);
+    border-radius: .6rem;
+    cursor: pointer;
+  }
+
+  .cs-hamburguer span,
+  .cs-hamburguer span::before,
+  .cs-hamburguer span::after {
+    content: "";
+    position: absolute;
+    left: 11px;
+    width: 20px;
+    height: 2px;
+    background: var(--titulo);
+  }
+
+  .cs-hamburguer span {
+    top: 21px;
+  }
+
+  .cs-hamburguer span::before {
+    top: -6px;
+    left: 0;
+  }
+
+  .cs-hamburguer span::after {
+    top: 6px;
+    left: 0;
+  }
+
+  .cs-menu-toggle:focus-visible + .cs-hamburguer {
+    outline: 3px solid var(--roxo);
+    outline-offset: 2px;
+  }
+
+  /* Links aparecem quando o menu é aberto */
+  .cs-nav {
+    display: none;
+    flex-direction: column;
+    order: 4;
+    width: 100%;
+    gap: .25rem;
+    margin: 0;
+  }
+
+  .cs-menu-toggle:checked ~ .cs-nav {
+    display: flex;
+  }
+
+  .cs-nav a {
+    padding: .6rem 0;
+  }
+}
+
+/* Ajustes específicos para celulares */
+@media (max-width: 620px) {
+  .cs-grade {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cs-logo img {
+    height: 40px;
+  }
+
+  .cs-filtros {
+    gap: .5rem;
+  }
+
+  .cs-filtro {
+    padding: .45rem 1rem;
+    font-size: .9rem;
+  }
+
+  .cs-page::before {
+    opacity: .9;
+  }
+}
+
+/* Transições suaves nos botões */
+@media (prefers-reduced-motion: no-preference) {
+  .cs-btn,
+  .cs-conta,
+  .cs-filtro {
+    transition: background-color .2s;
+  }
+}
